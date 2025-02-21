@@ -36,7 +36,7 @@ nm = "jhanvi"
 console.log(nm)   // jhanvi 
 console.log(myName) // janvi  //not change by original name
 
-// for nonprimitive datatypes - (store in heap) - using cal by refrence - change in original data
+// for nonprimitive datatypes - (store in heap) - using cal by reference - change in original data
 
 let userOne = {
     email : "abc@gmail.com",

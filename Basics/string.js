@@ -17,3 +17,5 @@ console.log(newString)
 
 const namee = new String ("janvi paresh bhai ashara")
 console.log(namee.split(' '))
+
+

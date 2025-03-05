@@ -5,7 +5,7 @@ if(score > 100){
 }
 // console.log(`User power : ${power}`)
 
-
+// syntax
 // switch (key) {
 //     case value:
         

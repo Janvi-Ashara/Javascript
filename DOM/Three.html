@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit and remove DOM</title>
+</head>
+<body style="background-color: black; color: white">
+    <div style="display: block;">
+        <ul class="language">
+            <li>javascript</li>
+            </ul>
+        
+            <p class="para" style="border: 1px solid white; padding: 10px; margin:4px;">Add content</p>
+            
+        </div>
+        <button class="btn">Click me !</button>
+    <script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    addLanguage("python");
+
+
+    // best code
+    function addOptiLanguage(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage('golang')
+
+    // Edit
+    const second = document.querySelector("li:nth-child(2)")
+    console.log(second)
+    second.innerHTML = "swift"
+
+    const newli = document.createElement('li')
+    newli.textContent = "flutter"
+    second.replaceWith(newli)
+
+    //edit  another way
+    const firstLang = document.querySelector("li:first-child")
+    firstLang.outerHTML = '<li>Typescript</li>'
+
+    //remove
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+
+    function handleClick(content){
+        const p = document.createElement('p')
+        p.innerHTML= content;
+        document.querySelector('.para').parentElement.appendChild(p)
+    }
+        document.querySelector('.btn').addEventListener('click',function(){
+        handleClick("Atmiya")
+        handleClick("hello")
+    })
+
+
+
+
+    </script>
+</body>
+</html>

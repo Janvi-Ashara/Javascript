@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        border: 2px solid black;
+        height: 100px;
+        width: 100px;
+        margin: 5px;
+        text-align: center;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Hello students</h2>
+    <div class="box">First</div>
+    <div class="box">Second</div> 
+    <div class="box">First</div>
+    <div class="box">Second</div>
+    <div class="newDiv">
+
+    </div>
+    <div id="boxvalue" name="JSDiv">Hello</div>
+    <p class="para">Apni Coffee</p>
+
+    <script>
+    const h2 = document.querySelector("h2");
+    console.log(h2.innerText);
+    h2.innerText = h2.innerText + " Apna college";
+    console.log(h2.innerText);
+
+    let divs = document.querySelectorAll(".box");
+    console.log(divs);
+
+    // let i = 1;
+    // for (const div of divs) {
+    // // console.log(div.innerText)
+    // div.innerText = `new unique value ${i}`;
+    // i++;
+    // }
+
+    let first = divs[0].innerText = 'Hello first box'
+    divs[0].style.backgroundColor = 'red'
+    let second = divs[1].innerText = "Hello second box"
+    let Third = divs[2].innerText = "Hello third box"
+
+//     let div = document.querySelector("div");
+//     console.log(div.innerText);  //hello
+
+//     let id = div.getAttribute("id"); 
+//     console.log(id);  //boxvalue
+
+//   let name = div.getAttribute('name')
+//   console.log(name)   //JSDiv
+
+//   let per = document.querySelector('p')
+//   console.log(per.getAttribute('class'))   //para
+//   per.setAttribute('class','abcd')
+
+    let newBtn = document.createElement("button")
+    newBtn.innerText = "click me!"
+    console.log(newBtn)
+
+        // let div = document.querySelector('.newDiv')
+        // div.append(newBtn)
+        // div.prepend(newBtn)
+
+        let p = document.querySelector('p')
+        p.after(newBtn)
+
+
+        let newHeading = document.createElement('h1')
+        newHeading.innerHTML = "<i>New Heading</i>"
+
+        document.querySelector('body').prepend(newHeading)
+
+        let para = document.querySelector('p')
+        para.remove()
+    </script>
+  </body>
+</html>

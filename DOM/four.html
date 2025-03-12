@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+    <style>
+        .myClass{
+            background-color: yellow;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <p class="para" style="color: purple; font-size: 30px; font-weight: 700;">Atmiya University</p>
+
+    <script>
+      let btn = document.createElement("button");
+      btn.innerText = "Click Me!";
+      console.log(btn.innerText)
+      btn.style.backgroundColor = 'red'
+      btn.style.color = 'white'
+
+      // Append the button to the body - both method are worked
+      document.body.prepend(btn);
+    //   document.querySelector('body').append(btn)
+
+    let para = document.querySelector('p')
+    console.log(para.innerText)
+    // para.setAttribute('class','myClass')
+    para.classList.add('myClass')  // this is not override property
+    </script>
+  </body>
+</html>

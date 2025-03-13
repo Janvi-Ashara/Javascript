@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listener</title>
+  </head>
+  <body>
+    <h2>Amazing Picture</h2>
+
+    <div id="id" class="images">
+      <ul style="list-style-type: none" id="images">
+        <li>
+          <img
+            width="200px"
+            src="./images/2010-abt-r8-gtr-sports-1280x800.jpg"
+            id="audi"
+            alt="audi"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            src="./images/2018_jaguar_xe_300_sport_4k-3840x2160.jpg"
+            id="jaguar1"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            src="./images/2018_jaguar_xj50_lwb-2560x1440.jpg"
+            id="jaguar2"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            src="./images/2018_Jaguar_XJR575_Sedan_Car.jpg"
+            id="jaguar3"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            src="./images/2019-Bugatti-Divo-V7-2000.jpg"
+            id="buggati"
+          />
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      // document.getElementById('audi').onclick = function() {
+      //   alert("Audi run")
+      // }
+      document.getElementById("images").addEventListener("click", function (e) {
+        // console.log(e)
+        console.log("CLick inside images");
+      },true);
+      document.getElementById("audi").addEventListener("click", function (e) {
+        // console.log(e)
+        console.log("Audi run");
+      },true);
+
+      document.getElementById('buggati').addEventListener('click',function (e) {
+        e.preventDefault() 
+        console.log("buggati clicked")
+      })
+
+      // nice
+
+document.querySelector('#images').addEventListener('click',function (e) {
+  console.log(e.target.tagName);
+  if(e.target.tagName === 'IMG')
+{
+  console.log(e.target.id)
+
+  let removeIt = e.target.parentNode
+  removeIt.remove()
+}
+  // removeIt.parentNode.removeChild(removeIt)
+
+})
+
+    </script>
+  </body>
+</html>
+ //type, timestamp , defaultPrevented
+ //target, toElement, srcElement , currentTarget
+ // clientX , clientY, screenX, screenY
+ // altKey, ctrlKey, shiftKey, keyCode

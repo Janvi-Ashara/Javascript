@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Click Test</title>
+    <style>
+      .box {
+        border: 1px solid black;
+        height: 150px;
+        width: 150px;
+        margin: 10px;
+        background-color: dodgerblue;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn1">Click me</button>
+    <button ondblclick="console.log('button was clicked 2X')">
+      Click 2 times
+    </button>
+    <div class="box" onmouseover="console.log('you are inside box')">
+      this is box
+    </div>
+    <script>
+      let btn1 = document.getElementById("btn1");
+      // btn1.onclick =(e) => {
+      //     console.log('btn was clicked')
+      //     console.log(e)
+      //     console.log(e.type) //click
+      //     console.log(e.target) //<button id="btn1">
+      //     console.log(e.clientX , e.clientY)  //40 27
+      // }
+
+      //add event
+    btn1.addEventListener("click", (e) => {
+    console.log("button was clicked 1");
+    // console.log(e)
+    });
+    btn1.addEventListener("click", () => {
+    console.log("Hello 2");
+    });
+
+    const handle3 = () => {
+    console.log("button was clicked3");
+    };
+
+    btn1.addEventListener('click',handle3)
+    
+    btn1.addEventListener("click", () => {
+    console.log("Hello 4");
+    });
+
+    //remove event
+    btn1.removeEventListener("click" , handle3);
+
+    let div = document.querySelector("div");
+    div.onmouseover = () => {
+    console.log("you are inside div");
+    };
+</script>
+</body>
+</html>

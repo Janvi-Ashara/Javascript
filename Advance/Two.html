@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async - Await</title>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+  </body>
+  <script>
+
+
+async function hello() {
+    console.log("hello");
+}
+
+function api() {
+    return new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log("weather data");
+        resolve(200);
+    }, 2000);
+    });
+}
+
+async function getWeatherData() {
+    await api();  //1st
+    await api();  //2st
+}
+
+// Async - Await
+function getData(dataID, getNextData) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          console.log("data", dataID);
+          resolve("success");
+          if (getNextData) {
+            getNextData();
+          }
+        }, 2000);
+      });
+    }
+
+(
+async function getAllData(){
+    console.log("fetching data1...")
+    await getData(1)
+    console.log("fetching data2...")
+    await getData(2)
+    console.log("fetching data3...")
+    await getData(3)
+})(); // iife function  function() () immedietly call the function
+
+</script>
+</html>
